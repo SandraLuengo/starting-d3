@@ -1,16 +1,44 @@
 <html>
   <head>
     <link rel="stylesheet" href="index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
     <title>Learn D3.js</title>
   </head>
   <body>
     <h1>D3</h1>
     <svg class="bar-chart"></svg>
+    <div id="my_dataviz"></div>
+
+    <style>
+      .node {
+        cursor: pointer;
+        stroke: #3182bd;
+        stroke-width: 1.5px;
+      }
+
+      .link {
+        fill: none;
+        stroke: #9ecae1;
+        stroke-width: 1.5px;
+      }
+    </style>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="./nodesExamples/data.js"></script>
+    <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+    <script src="https://d3js.org/d3-quadtree.v1.min.js"></script>
+    <script src="https://d3js.org/d3-timer.v1.min.js"></script>
+    <script src="https://d3js.org/d3-force.v2.min.js"></script>
+    <script>
+      var simulation = d3.forceSimulation(nodes);
+    </script>
+    <!-- <script src="./collapsibleExample/readme.json"></script>
+    <script src="./collapsibleExample/index.js"></script> -->
+    <!-- <script src="./nodesExamples/data.js"></script>
     <script src="./nodesExamples/functions.js"></script>
-    <script src="./nodesExamples/index.js"></script>
+    <script src="./nodesExamples/index.js"></script> -->
+    <script src="./src/chordDiagram.js"></script>
     <!-- <script src="src/scatterPlot.js"></script> -->
     <!-- <script src="./src/lineChart.js"></script> -->
     <!-- <script src="./src/pieChart.js"></script> -->
