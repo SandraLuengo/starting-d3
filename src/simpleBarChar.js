@@ -6,19 +6,23 @@ let barWidth = (svgWidth / dataset.length);
 
 
 let svg = d3.select('svg')
-.attr("width", svgWidth)
-.attr("height", svgHeight);
+    .attr("width", svgWidth)
+    .attr("height", svgHeight);
 
 let barChart = svg.selectAll("rect")
-.data(dataset)
-.enter()
-.append("rect")
-.attr("y", (data) => svgHeight - data)
-.attr("height", (data) => data)
-.attr("width", barWidth - barPadding)
-.attr("transform", (data, i) => { 
-    let translate = [barWidth * i, 0]; 
-    return "translate(" + translate + ")"; 
-});
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("y", (data) => svgHeight - data)
+    .attr("height", (data) => data)
+    .attr("width", barWidth - barPadding)
+    .attr("transform", (data, i) => {
+        let translate = [barWidth * i, 0];
+        return "translate(" + translate + ")";
+    })
+    .attr("fill", function (d) {
+        return `rgb(${d}, ${d+50}, 0)`
+    });
 
-d3.select('svg').style('background-color', 'blue');
+
+d3.select('svg').style('background-color', 'grey');
